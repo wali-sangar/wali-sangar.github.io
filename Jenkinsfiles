@@ -1,0 +1,16 @@
+pipline {
+  agent any
+    stages {
+      stage('run frontent') {
+          steps {
+          echo 'executing yarn...'
+          }
+      }
+      
+        stage('run backent') {
+          steps {
+          echo 'executing gradle...'
+          }
+      }
+    }
+}
