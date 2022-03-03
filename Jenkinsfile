@@ -4,7 +4,7 @@ pipline {
       stage('run frontent') {
           steps {
           echo 'executing yarn...'
-          nodejs(NodeJS 17.6.0) {
+          nodejs(17.6.0) {
                 sh 'yarn isntall'
              }
           }
