@@ -4,12 +4,18 @@ pipline {
       stage('run frontent') {
           steps {
           echo 'executing yarn...'
+          nodejs(NodeJS 17.6.0) {
+                sh 'yarn isntall'
+             }
           }
       }
       
         stage('run backent') {
           steps {
           echo 'executing gradle...'
+            withGradle() {
+                sh './gradlew -v'
+              }
           }
       }
     }
