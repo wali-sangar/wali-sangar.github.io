@@ -2,7 +2,7 @@ pipeline {
   agent any
   parameters{
     choice(name: 'VERSION', choices: ['1.1.0', '1.2.0', '1.3.0'])
-    booleanParam(name: 'executeTests', defaulthValue: true, description: '' )
+    booleanParam(name: 'executeTests', defaultValue: true, description: '' )
   }
   stages {
     stage('test') {
@@ -12,14 +12,13 @@ pipeline {
             parameters.executeTests
           }
         }
-        echo 'testing'
+        echo 'testing application'
       }
     }
     
     stage('build') {
       steps {
-        echo "building version ${NEW_VERSION}"
-        withCredentials
+        echo 'building application'
       }
     }
     
