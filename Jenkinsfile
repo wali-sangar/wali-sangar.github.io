@@ -2,13 +2,13 @@ pipeline {
   agent any
   stages {
     stage('test') {
-      steps {
+      step {
         echo 'testing'
       }
     }
     
     stage('build') {
-      steps {
+      step {
         echo 'building'
       }
     }
@@ -17,6 +17,10 @@ pipeline {
   post {
     always {
       echo 'post block executed'
+    }
+    
+    failure {
+      echo 'failure blocked executed'
     }
   }
 }
