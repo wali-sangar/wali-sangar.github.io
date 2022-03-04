@@ -4,8 +4,8 @@ pipline {
       
         stage('run backend') {
           steps {
+            echo 'running gradle'
             withGradle() {
-                echo 'running gradle'
                 sh './gradlew -v'
               }
           }
