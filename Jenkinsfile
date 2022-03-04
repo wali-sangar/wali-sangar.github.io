@@ -2,15 +2,26 @@ pipeline {
   agent any
     stages {
       
-        stage('run backend') {
+        stage('test') {
           steps {
-            echo 'running gradle'
-            withGradle() {
-                sh './gradlew -v'
-              }
+            echo 'testing feature'
           }
       }
       
-      
+      stage('build') {
+        echo 'building application'
+      }
+    
     }
+  
+      post {
+        always {
+          echo 'alawyas block executed'
+        }
+        
+        failure {
+          echo 'your job for your-pipeline has failed'
+        }
+      }
+   
 }
