@@ -1,22 +1,16 @@
 pipline {
   agent any
     stages {
-      stage('run frontent') {
-          steps {
-          echo 'executing yarn...'
-          nodejs() {
-                sh 'yarn isntall'
-             }
-          }
-      }
       
-        stage('run backent') {
+        stage('run backend') {
           steps {
-          echo 'executing gradle...'
             withGradle() {
+                echo 'running gradle'
                 sh './gradlew -v'
               }
           }
       }
+      
+      
     }
 }
