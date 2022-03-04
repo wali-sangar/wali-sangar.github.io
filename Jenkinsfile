@@ -12,7 +12,7 @@ pipeline {
         echo 'building application'
       }
     
-    }
+    
   
       post {
         always {
@@ -23,5 +23,5 @@ pipeline {
           echo 'your job for your-pipeline has failed'
         }
       }
-   
+    }
 }
